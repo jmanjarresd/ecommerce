@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="BusinessConsulting, ​ Consulting Process, Our Team, ​Welcome to the Group, Our Clients, ​IT Consulting, 1, 2, 3, 4, 5, 6, About Us, ​Consulting Successes">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nicepage.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/nicepage.js') }}" defer=""></script>
+    <meta name="generator" content="Nicepage 3.26.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/e-commerce1.png"
+    }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body">
+    <header class="u-clearfix u-header u-sticky u-white u-header" id="sec-74af"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="/" class="u-image u-logo u-image-1" data-image-width="1004" data-image-height="538">
+          <img src="{{ url_for('static', filename='images/e-commerce1.png') }}" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+              </symbol>
+              </defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">Home</a>
+              {% if users_sessions['superadmin'] %}
+              <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base dashboard" href="/dashboard" style="padding: 10px 20px;">Dashboard</a></li>
+              <li style="display: inline-block;">|</li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 20px;">{{ users_sessions['superadmin'] }}</a></li>
+              <li style="display: inline-block;">|</li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/logout" style="padding: 10px 20px;"><i class="fas fa-sign-out-alt"></i> Logout</i></a></li>
+              {% else %}
+                {% if users_sessions['admin'] %}
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base dashboard" href="/dashboard" style="padding: 10px 20px;">Dashboard</a></li>
+                  <li style="display: inline-block;">|</li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 20px;">{{ users_sessions['admin'] }}</a></li>
+                  <li style="display: inline-block;">|</li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/logout" style="padding: 10px 20px;"><i class="fas fa-sign-out-alt"></i> Logout</i></a></li>
+                {% else %}
+                  {% if users_sessions['user'] %}
+                    <li style="display: inline-block;">|</li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 20px;">{{ users_sessions['user'] }}</a></li>
+                    <li style="display: inline-block;">|</li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/logout" style="padding: 10px 20px;"><i class="fas fa-sign-out-alt"></i> Logout</i></a></li>
+                    {% else %}
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/sign-in" style="padding: 10px 20px;">Sign in</a></li>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/sign-up" style="padding: 10px 20px;">Sign up</a></li>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+</li>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/" style="padding: 10px 20px;">Home</a></li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/sign-in" style="padding: 10px 20px;">Sign in</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="row">
+      <div class="col-sm-3 col-lg-2">
+        <nav class="lista"><br><br>
+          <ul class="categorias">
+            <li><a href="#">New</a></li>
+            <li><a href="#">King</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Market</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Tools</a></li>
+          </ul>
+        </nav>
+        <a href="/add_product" style="text-decoration: none; color: #000000;"><input class="add_product" style="margin-left: 50px; margin-top: 10px; padding: 10px; background-color: #478ac9;" type="button" value="Add Product"></a>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <section class="u-align-center u-clearfix u-section-1" id="sec-7705">
+          <div class="u-clearfix u-sheet u-sheet-1"><!--products--><!--products_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/products_options_json-->
+            <div class="u-layout-grid u-products u-products-1">
+              <div class="u-repeater u-repeater-1"><!--product_item-->
+                {% for prod in prods %}
+                <div class="u-align-center u-container-style u-products-item u-repeater-item u-white u-repeater-item-1">
+                  <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-icon u-icon-rectangle u-text-palette-3-light-1 u-icon-1"><a href="/edit"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 300 300" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7d10"></use></svg><svg class="u-svg-content" viewBox="0 0 300 300" x="0px" y="0px" id="svg-7d10" style="enable-background:new 0 0 300 300;"><g><g><path d="M149.996,0C67.157,0,0.001,67.161,0.001,149.997S67.157,300,149.996,300s150.003-67.163,150.003-150.003    S232.835,0,149.996,0z M221.302,107.945l-14.247,14.247l-29.001-28.999l-11.002,11.002l29.001,29.001l-71.132,71.126    l-28.999-28.996L84.92,186.328l28.999,28.999l-7.088,7.088l-0.135-0.135c-0.786,1.294-2.064,2.238-3.582,2.575l-27.043,6.03    c-0.405,0.091-0.817,0.135-1.224,0.135c-1.476,0-2.91-0.581-3.973-1.647c-1.364-1.359-1.932-3.322-1.512-5.203l6.027-27.035    c0.34-1.517,1.286-2.798,2.578-3.582l-0.137-0.137L192.3,78.941c1.678-1.675,4.404-1.675,6.082,0.005l22.922,22.917    C222.982,103.541,222.982,106.267,221.302,107.945z"></path>
+    </g>
+    </g></svg></span></a><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-2"><a href=""><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9696"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-9696"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 0" fill="#f44336"></path><path d="m350.273438 320.105469c8.339843 8.34375 8.339843 21.824219 0 30.167969-4.160157 4.160156-9.621094 6.25-15.085938 6.25-5.460938 0-10.921875-2.089844-15.082031-6.25l-64.105469-64.109376-64.105469 64.109376c-4.160156 4.160156-9.621093 6.25-15.082031 6.25-5.464844 0-10.925781-2.089844-15.085938-6.25-8.339843-8.34375-8.339843-21.824219 0-30.167969l64.109376-64.105469-64.109376-64.105469c-8.339843-8.34375-8.339843-21.824219 0-30.167969 8.34375-8.339843 21.824219-8.339843 30.167969 0l64.105469 64.109376 64.105469-64.109376c8.34375-8.339843 21.824219-8.339843 30.167969 0 8.339843 8.34375 8.339843 21.824219 0 30.167969l-64.109376 64.105469zm0 0" fill="#fafafa"></path></svg></span></a><!--product_image-->
+                    <img alt="" class="u-expanded-width u-image u-image-default u-product-control u-image-1" src="static/images/{{ prod.6 }}"><!--/product_image--><!--product_title--><!-- style="padding: 15px;" height="322px" width="170px" <---- Con esto se ve bien la foto png y con el class se ve bien la foto svg -->
+                    <h4 class="u-align-center u-product-control u-text u-text-1">
+                      <a class="u-product-title-link" href="/product/{{ prod.0 }}"><!--product_title_content-->{{ prod.1 }}<!--/product_title_content--></a>
+                    </h4><!--/product_title--><!--product_price-->
+                    <div class="u-product-control u-product-price u-product-price-1">
+                      <div class="u-price-wrapper u-spacing-10"><!--product_old_price-->
+                        <div class="u-hide-price u-old-price"><!--product_old_price_content-->$12<!--/product_old_price_content--></div><!--/product_old_price--><!--product_regular_price-->
+                        <div class="u-price u-text-palette-2-base" style="font-size: 1.25rem; font-weight: 700;"><!--product_regular_price_content-->${{ prod.4 }}<!--/product_regular_price_content--></div><!--/product_regular_price-->
+                      </div>
+                    </div><!--/product_price--><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":""}--><!--/options_json-->
+                    <a href="" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-product-control u-text-body-color u-btn-1"><!--product_button_content-->Add to Cart<!--/product_button_content--></a><!--/product_button-->
+                  </div>
+                </div><!--/product_item--><!--product_item-->
+                {% endfor %}
+          </div>
+        </section>
+      </div>
+      
+    </div> 
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f5d3"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Texto de ejemplo. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-design" target="_blank">
+        <span>Website Design</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
+        <span>HTML Website Builder</span>
+      </a>. 
+    </section>
+    
+    <script src="https://kit.fontawesome.com/9f453cb431.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  </body>
+</html>
